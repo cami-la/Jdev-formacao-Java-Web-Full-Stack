@@ -16,7 +16,7 @@ public class Aluno {
 	private String nomeEscola;
 	private String serieMatriculado;
 	
-	private List<Double> disciplinas = new ArrayList<Double>();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	//métodos
 	public double getMediaNota() {

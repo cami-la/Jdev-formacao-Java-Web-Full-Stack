@@ -20,7 +20,12 @@ public class Aluno {
 	
 	//métodos
 	public double getMediaNota() {
-		return 0;
+		double somaNotas = 0.0;
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		return somaNotas/disciplinas.size();
+		//return this.disciplinas.stream().mapToDouble(Disciplina::getNota).average().getAsDouble();
 	}
 	
 	public boolean isAlunoAprovado() {
@@ -162,5 +167,14 @@ public class Aluno {
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + "]";
 	}
+
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+	
 	
 }

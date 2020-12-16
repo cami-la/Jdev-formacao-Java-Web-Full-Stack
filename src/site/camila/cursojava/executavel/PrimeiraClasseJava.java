@@ -60,9 +60,7 @@ public class PrimeiraClasseJava {
 		aluno1.getDisciplinas().add(disciplina1);
 		aluno1.getDisciplinas().add(disciplina2);
 		aluno1.getDisciplinas().add(disciplina3);
-		aluno1.getDisciplinas().add(disciplina4);
-
-		
+		aluno1.getDisciplinas().add(disciplina4);	
 		
 		
 		System.out.println("O nome do aluno1 é = " + aluno1.getNome());

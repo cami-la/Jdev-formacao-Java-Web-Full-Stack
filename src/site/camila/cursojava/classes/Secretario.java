@@ -1,6 +1,6 @@
 package site.camila.cursojava.classes;
 
-public class Secretario {
+public class Secretario extends Pessoa {
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
@@ -23,6 +23,13 @@ public class Secretario {
 	}
 	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
+	}
+	
+	@Override
+	public String toString() {
+		return "Secretario [registro=" + registro + ", nivelCargo=" + nivelCargo + ", experiencia=" + experiencia
+				+ ", nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
 	
 }

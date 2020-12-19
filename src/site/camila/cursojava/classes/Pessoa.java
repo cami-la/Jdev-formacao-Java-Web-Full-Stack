@@ -2,7 +2,7 @@ package site.camila.cursojava.classes;
 
 public class Pessoa {
 	protected String nome;
-	protected Integer idade;
+	protected int idade;
 	protected String dataNascimento;
 	protected String registroGeral;
 	protected String numeroCpf;
@@ -16,10 +16,10 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Integer getIdade() {
+	public int getIdade() {
 		return idade;
 	}
-	public void setIdade(Integer idade) {
+	public void setIdade(int idade) {
 		this.idade = idade;
 	}
 	public String getDataNascimento() {
@@ -51,6 +51,10 @@ public class Pessoa {
 	}
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
+	}
+	
+	public boolean pessoaMaiorIdade() {
+		return idade >= 18;
 	}
 	
 }

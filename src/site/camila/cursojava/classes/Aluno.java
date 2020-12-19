@@ -60,7 +60,7 @@ public class Aluno extends Pessoa {
 		this.nome = nome;
 	}
 
-	public Integer getIdade() {
+	public int getIdade() {
 		return idade;
 	}
 
@@ -175,6 +175,15 @@ public class Aluno extends Pessoa {
 
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
+	}
+	
+	@Override
+	public boolean pessoaMaiorIdade() {
+		return this.idade >= 21;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Obaa aluno é maior idade" : "Ixii você é menor de idade";
 	}
 
 }

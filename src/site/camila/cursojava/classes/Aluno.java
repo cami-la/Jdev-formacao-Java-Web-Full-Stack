@@ -186,4 +186,9 @@ public class Aluno extends Pessoa {
 		return this.pessoaMaiorIdade() ? "Obaa aluno é maior idade" : "Ixii você é menor de idade";
 	}
 
+	@Override
+	public double salario() {
+		return 0;
+	}
+
 }

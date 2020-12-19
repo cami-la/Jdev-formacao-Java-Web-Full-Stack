@@ -3,8 +3,10 @@ package site.camila.cursojava.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import site.camila.cursojava.constantes.StatusAluno;
+
 public class Aluno {
-	//atributos
+	// atributos
 	private String nome;
 	private Integer idade;
 	private String dataNascimento;
@@ -15,41 +17,44 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
+
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
-	
-	//métodos
+
+	// métodos
 	public double getMediaNota() {
 		double somaNotas = 0.0;
 		for (Disciplina disciplina : disciplinas) {
 			somaNotas += disciplina.getNota();
 		}
-		return somaNotas/disciplinas.size();
-		//return this.disciplinas.stream().mapToDouble(Disciplina::getNota).average().getAsDouble();
+		return somaNotas / disciplinas.size();
+		// return
+		// this.disciplinas.stream().mapToDouble(Disciplina::getNota).average().getAsDouble();
 	}
-	
-	/*public boolean isAlunoAprovado() {
-		if (this.getMediaNota() >= 70) return true;
-		else return false;
-	}*/
-	
+
+	/*
+	 * public boolean isAlunoAprovado() { if (this.getMediaNota() >= 70) return
+	 * true; else return false; }
+	 */
+
 	public String getAlunoAprovado() {
 		if (this.getMediaNota() >= 50) {
-			if (this.getMediaNota() >= 70) return "Aluno Aprovado";
-			else return "Aluno em Recuperação";
-		}
-		else return "Aluno Reprovado";
+			if (this.getMediaNota() >= 70)
+				return StatusAluno.APROVADO;
+			else
+				return StatusAluno.RECUPERACAO;
+		} else
+			return StatusAluno.REPROVADO;
 	}
-	
-	//métodos especiais
+
+	// métodos especiais
 	public Aluno() {
-		
+
 	}
-	
+
 	public Aluno(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public Aluno(String nomePadrao, Integer idadePadrao) {
 		this.nome = nomePadrao;
 		this.idade = idadePadrao;
@@ -169,8 +174,7 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplinas=" + disciplinas + ", Resultado=" + getAlunoAprovado()
-				+ "]";
+				+ serieMatriculado + ", disciplinas=" + disciplinas + ", Resultado=" + getAlunoAprovado() + "]";
 	}
 
 	public List<Disciplina> getDisciplinas() {
@@ -180,6 +184,5 @@ public class Aluno {
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-	
-	
+
 }

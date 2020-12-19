@@ -12,7 +12,7 @@ public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
-		for (int i = 1; i <= 1; i++) {
+		for (int i = 1; i <= 2; i++) {
 
 			String nome = JOptionPane.showInputDialog("Nome do aluno " + i + ": ");
 			/*
@@ -74,6 +74,20 @@ public class PrimeiraClasseJava {
 
 		for (int i = 0; i < alunos.size(); i++) {
 			Aluno aluno = alunos.get(i);
+			if (aluno.getNome().equalsIgnoreCase("Camila")) {
+				Aluno trocar = new Aluno();
+				trocar.setNome("Aluno foi trocado");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Matemática");
+				disciplina.setNota(96);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(i, trocar);
+				aluno = alunos.get(i);
+			}
+			
 			System.out.println("Aluno: " + aluno.getNome());
 			System.out.println("Média: " + aluno.getMediaNota());
 			System.out.println("Resultado: " + aluno.getAlunoAprovado());

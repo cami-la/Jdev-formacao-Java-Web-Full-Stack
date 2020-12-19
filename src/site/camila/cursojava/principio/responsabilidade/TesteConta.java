@@ -17,6 +17,9 @@ public class TesteConta {
 		
 		contaBancaria.depositoDinheiro(1000.0);
 		System.out.println(contaBancaria);
+		
+		contaBancaria.soma100Reais();
+		System.out.println(contaBancaria);
 
 	}
 

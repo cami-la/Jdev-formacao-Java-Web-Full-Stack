@@ -68,10 +68,10 @@ public class PrimeiraClasseJava {
 			 * aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue()
 			 * - 1); }
 			 */
-			
+
 			alunos.add(aluno1);
 		}
-		
+
 		for (Aluno aluno : alunos) {
 			System.out.println(alunos);
 			System.out.println("Média da nota do aluno = " + aluno.getMediaNota());
@@ -80,6 +80,5 @@ public class PrimeiraClasseJava {
 
 		}
 
-		
 	}
 }

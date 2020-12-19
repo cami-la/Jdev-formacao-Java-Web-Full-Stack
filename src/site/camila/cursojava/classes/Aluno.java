@@ -28,13 +28,16 @@ public class Aluno {
 		//return this.disciplinas.stream().mapToDouble(Disciplina::getNota).average().getAsDouble();
 	}
 	
-	public boolean isAlunoAprovado() {
+	/*public boolean isAlunoAprovado() {
 		if (this.getMediaNota() >= 70) return true;
 		else return false;
-	}
+	}*/
 	
 	public String getAlunoAprovado() {
-		if (this.isAlunoAprovado()) return "Aluno Aprovado";
+		if (this.getMediaNota() >= 50) {
+			if (this.getMediaNota() >= 70) return "Aluno Aprovado";
+			else return "Aluno em Recuperação";
+		}
 		else return "Aluno Reprovado";
 	}
 	

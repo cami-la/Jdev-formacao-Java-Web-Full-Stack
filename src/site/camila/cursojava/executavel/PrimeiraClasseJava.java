@@ -10,7 +10,7 @@ public class PrimeiraClasseJava {
 		Aluno aluno1 = new Aluno();
 
 		String nome = JOptionPane.showInputDialog("Nome: ");
-		String idade = JOptionPane.showInputDialog("Idade: ");
+		/*String idade = JOptionPane.showInputDialog("Idade: ");
 		String dataDeNascimento = JOptionPane.showInputDialog("Data de nascimento: ");
 		String rg = JOptionPane.showInputDialog("RG: ");
 		String cpf = JOptionPane.showInputDialog("CPF: ");
@@ -18,10 +18,10 @@ public class PrimeiraClasseJava {
 		String pai = JOptionPane.showInputDialog("Nome do Pai: ");
 		String dataMatricula = JOptionPane.showInputDialog("Data da Matricula: ");
 		String serie = JOptionPane.showInputDialog("Série ");
-		String escola = JOptionPane.showInputDialog("Escola: ");
+		String escola = JOptionPane.showInputDialog("Escola: ");*/
 
 		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade));
+		/*aluno1.setIdade(Integer.valueOf(idade));
 		aluno1.setDataNascimento(dataDeNascimento);
 		aluno1.setRegistroGeral(rg);
 		aluno1.setNumeroCpf(cpf);
@@ -29,7 +29,7 @@ public class PrimeiraClasseJava {
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(dataMatricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNomeEscola(escola);
+		aluno1.setNomeEscola(escola);*/
 
 		for (int j = 1; j <= 4; j++) {
 			String nomeDisciplina = JOptionPane.showInputDialog("Diciplina " + j + ":");

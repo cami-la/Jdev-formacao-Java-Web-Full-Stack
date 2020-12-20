@@ -23,7 +23,7 @@ public class PrimeiraClasseJava {
 			// 100% legítimo.
 			if (new FuncaoAutenticacao(new Diretor(senha, login)).autenticar()) {
 
-				List<Aluno> alunos = null; //new ArrayList<Aluno>();
+				List<Aluno> alunos = new ArrayList<Aluno>();
 
 				HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
@@ -124,8 +124,21 @@ public class PrimeiraClasseJava {
 				JOptionPane.showMessageDialog(null, "Acesso não permitido");
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas");
+			StringBuilder saida = new StringBuilder();
+					
+			e.printStackTrace(); //imprime erro no console
+			
+			System.out.println("Mensagem: " + e.getMessage()); //mensagem de erro ou causa
+			
+			for(int i = 0; i < e.getStackTrace().length; i++) {
+				saida.append("\nClasse de erro: " + e.getStackTrace()[i].getClassName());
+				saida.append("\nLinha do erro: " + e.getStackTrace()[i].getLineNumber());
+				saida.append("\nMétodo de erro: " + e.getStackTrace()[i].getMethodName());
+				saida.append("\nClass: " + e.getClass().getName());
+
+			}
+			
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + saida.toString());
 		}
 
 	}

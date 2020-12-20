@@ -23,17 +23,19 @@ public class PrimeiraClasseJava {
 			// 100% legítimo.
 			if (new FuncaoAutenticacao(new Diretor(senha, login)).autenticar()) {
 
-				List<Aluno> alunos = new ArrayList<Aluno>();
+				List<Aluno> alunos = null; //new ArrayList<Aluno>();
 
 				HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
 				for (int i = 1; i <= 2; i++) {
 
 					String nome = JOptionPane.showInputDialog("Nome do aluno " + i + ": ");
+
+					String idade = JOptionPane.showInputDialog("Idade: ");
 					/*
-					 * String idade = JOptionPane.showInputDialog("Idade: "); String
-					 * dataDeNascimento = JOptionPane.showInputDialog("Data de nascimento: ");
-					 * String rg = JOptionPane.showInputDialog("RG: "); String cpf =
+					 * String dataDeNascimento =
+					 * JOptionPane.showInputDialog("Data de nascimento: "); String rg =
+					 * JOptionPane.showInputDialog("RG: "); String cpf =
 					 * JOptionPane.showInputDialog("CPF: "); String mae =
 					 * JOptionPane.showInputDialog("Nome da mãe: "); String pai =
 					 * JOptionPane.showInputDialog("Nome do Pai: "); String dataMatricula =
@@ -44,8 +46,9 @@ public class PrimeiraClasseJava {
 					Aluno aluno1 = new Aluno();
 
 					aluno1.setNome(nome);
+
+					aluno1.setIdade(Integer.valueOf(idade));
 					/*
-					 * aluno1.setIdade(Integer.valueOf(idade));
 					 * aluno1.setDataNascimento(dataDeNascimento); aluno1.setRegistroGeral(rg);
 					 * aluno1.setNumeroCpf(cpf); aluno1.setNomeMae(mae); aluno1.setNomePai(pai);
 					 * aluno1.setDataMatricula(dataMatricula); aluno1.setSerieMatriculado(serie);
@@ -123,22 +126,24 @@ public class PrimeiraClasseJava {
 			} else {
 				JOptionPane.showMessageDialog(null, "Acesso não permitido");
 			}
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			StringBuilder saida = new StringBuilder();
-					
-			e.printStackTrace(); //imprime erro no console
-			
-			System.out.println("Mensagem: " + e.getMessage()); //mensagem de erro ou causa
-			
-			for(int i = 0; i < e.getStackTrace().length; i++) {
+
+			e.printStackTrace(); // imprime erro no console
+
+			System.out.println("Mensagem: " + e.getMessage()); // mensagem de erro ou causa
+
+			for (int i = 0; i < e.getStackTrace().length; i++) {
 				saida.append("\nClasse de erro: " + e.getStackTrace()[i].getClassName());
 				saida.append("\nLinha do erro: " + e.getStackTrace()[i].getLineNumber());
 				saida.append("\nMétodo de erro: " + e.getStackTrace()[i].getMethodName());
 				saida.append("\nClass: " + e.getClass().getName());
 
 			}
-			
+
 			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + saida.toString());
+		} catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception" + e.getClass().getName());
 		}
 
 	}

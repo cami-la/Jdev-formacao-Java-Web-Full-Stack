@@ -9,6 +9,10 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	private String senha, login;
 	
 	//métodos especias
+	
+	public Secretario() {	
+	}
+	
 	public Secretario(String senha, String login) {
 		super();
 		this.senha = senha;
@@ -55,7 +59,7 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	
 	@Override
 	public boolean autenticar() {
-		return this.login.equals("admin") && this.senha.equals("admin") ;
+		return this.login.equals("admin") && this.senha.equals("admin");
 	}
 	
 	

@@ -1,14 +1,26 @@
 package site.camila.cursojava.classes;
 
-public class Diretor extends Pessoa {
+import site.camila.cursojava.interfaces.PermitirAcesso;
+
+public class Diretor extends Pessoa implements PermitirAcesso {
 
 	private String registroEducacao;
 	private int tempoDirecao;
 	private String titulacao;
+	private String senha, login;
 
 	// métodos especiais
+
 	public String getRegistroEducacao() {
 		return registroEducacao;
+	}
+
+	public Diretor() {
+	}
+
+	public Diretor(String senha, String login) {
+		this.senha = senha;
+		this.login = login;
 	}
 
 	public void setRegistroEducacao(String registroEducacao) {
@@ -42,6 +54,18 @@ public class Diretor extends Pessoa {
 	@Override
 	public double salario() {
 		return 3900.78;
+	}
+
+	@Override
+	public boolean autenticar(String senha, String login) {
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
+	}
+
+	@Override
+	public boolean autenticar() {
+		return this.login.equals("camila") && this.senha.equals("123");
 	}
 
 }

@@ -7,20 +7,19 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import site.camila.cursojava.classes.Aluno;
+import site.camila.cursojava.classes.Diretor;
 import site.camila.cursojava.classes.Disciplina;
-import site.camila.cursojava.classes.Secretario;
+import site.camila.cursojava.classesauxiliares.FuncaoAutenticacao;
 import site.camila.cursojava.constantes.StatusAluno;
-import site.camila.cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 
 		String login = JOptionPane.showInputDialog("Informe o login: ");
-		String senha = JOptionPane.showInputDialog("Informe a senha");
+		String senha = JOptionPane.showInputDialog("Informe a senha: ");
 		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
-
-		if (permitirAcesso.autenticar()) {
+		//vou travar o contrato para autorizar somente quem realmente tiver o contrato 100% legítimo.
+		if (new FuncaoAutenticacao(new Diretor(senha, login)).autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 

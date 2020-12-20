@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import site.camila.cursojava.classes.Aluno;
 import site.camila.cursojava.classes.Disciplina;
+import site.camila.cursojava.classes.Secretario;
 import site.camila.cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasseJava {
@@ -15,8 +16,12 @@ public class PrimeiraClasseJava {
 
 		String login = JOptionPane.showInputDialog("Informe o login: ");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
 
-		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		if (secretario.autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -114,6 +119,8 @@ public class PrimeiraClasseJava {
 						+ aluno.getMediaNota());
 
 			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 
 	}

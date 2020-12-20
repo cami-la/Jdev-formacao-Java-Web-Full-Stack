@@ -2,6 +2,7 @@ package site.camila.cursojava.executavel;
 
 import site.camila.cursojava.classes.Aluno;
 import site.camila.cursojava.classes.Diretor;
+import site.camila.cursojava.classes.Pessoa;
 import site.camila.cursojava.classes.Secretario;
 
 public class TestandoClassesFilhas {
@@ -34,7 +35,18 @@ public class TestandoClassesFilhas {
 		System.out.println("Salário Aluno = R$" + aluno.salario());
 		System.out.println("Salário Secretario = R$" + secretario.salario());
 		System.out.println("Salário Diretor = R$" + diretor.salario());
+		
+		Pessoa pessoa = new Aluno();
+		pessoa = secretario;
+		
+		teste(aluno);
+		teste(secretario);
+		teste(diretor);
+	}
 	
+	public static void teste(Pessoa pessoa) {
+		System.out.println("Essa pessoa é demais = " 
+							+ pessoa.getNome() + " e o salario é de = R$" + pessoa.salario());
 	}
 
 }

@@ -10,18 +10,15 @@ import site.camila.cursojava.classes.Aluno;
 import site.camila.cursojava.classes.Disciplina;
 import site.camila.cursojava.classes.Secretario;
 import site.camila.cursojava.constantes.StatusAluno;
+import site.camila.cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 
 		String login = JOptionPane.showInputDialog("Informe o login: ");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
-		
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
 
-		if (secretario.autenticar()) {
+		if (new Secretario().autenticar(login, senha)) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 

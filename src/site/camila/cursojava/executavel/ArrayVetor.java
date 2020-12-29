@@ -32,9 +32,16 @@ public class ArrayVetor {
 
 		for (Disciplina disc : aluno.getDisciplinas()) {
 			System.out.println(disc.getDisciplina());
-			for (double not : disc.getNota())
+			
+			double notaMax = Double.NEGATIVE_INFINITY;
+			double notaMin = Double.POSITIVE_INFINITY;
+			for (double not : disc.getNota()) {
 				System.out.print(not + " ");
-			System.out.println();
+				if (not > notaMax) notaMax = not;
+				if (not < notaMin) notaMin = not;
+			}
+			System.out.println("\nNota Minima = " + notaMin);
+			System.out.println("Nota Máxima = " + notaMax);
 		}
 	}
 

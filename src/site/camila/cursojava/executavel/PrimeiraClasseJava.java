@@ -61,7 +61,7 @@ public class PrimeiraClasseJava {
 
 						Disciplina disciplinas = new Disciplina();
 						disciplinas.setDisciplina(nomeDisciplina);
-						disciplinas.setNota(Double.parseDouble(valorNota));
+						//disciplinas.setNota(Double.parseDouble(valorNota));
 
 						aluno1.getDisciplinas().add(disciplinas);
 					}

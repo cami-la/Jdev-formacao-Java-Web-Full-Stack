@@ -23,7 +23,7 @@ public class PrimeiraClasseJava {
 			// 100% legítimo.
 			if (new FuncaoAutenticacao(new Diretor(senha, login)).autenticar()) {
 
-				List<Aluno> alunos = null; //new ArrayList<Aluno>();
+				List<Aluno> alunos = null; // new ArrayList<Aluno>();
 
 				HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
@@ -144,7 +144,8 @@ public class PrimeiraClasseJava {
 			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + saida.toString());
 		} catch (NullPointerException e) {
 			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception" + e.getClass().getName());
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
 	}
 }

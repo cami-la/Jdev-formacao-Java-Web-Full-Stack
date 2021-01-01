@@ -26,7 +26,48 @@ public class ArrayVetor {
 		disciplina2.setDisciplina("Curso Lógica");
 		disciplina2.setNota(notasLogica);
 		aluno.getDisciplinas().add(disciplina2);
+		
+		// Criação do aluno;
+				Aluno aluno1 = new Aluno();
+				aluno1.setNome("Camila Cavalcante");
+				aluno1.setNomeEscola("JDev Treinamento");
+				// Criação da disciplina;
+				Disciplina disciplina3 = new Disciplina();
+				disciplina3.setDisciplina("Curso de Java");
+				disciplina3.setNota(notas);
 
+				aluno1.getDisciplinas().add(disciplina3);
+
+				// Criação da disciplina;
+				Disciplina disciplina4 = new Disciplina();
+				disciplina4.setDisciplina("Curso Lógica");
+				disciplina4.setNota(notasLogica);
+				aluno1.getDisciplinas().add(disciplina4);
+		
+		Aluno[] arrayAlunos = new Aluno[2];
+		
+		arrayAlunos[0] = aluno;
+		arrayAlunos[1] = aluno1;
+
+		
+		for (Aluno alunoDoArray : arrayAlunos) {
+			System.out.println("O nome do aluno é: " + alunoDoArray.getNome());
+			System.out.println("Disciplinas: ");
+			for (Disciplina disciplinasDoAluno: alunoDoArray.getDisciplinas()) {
+				System.out.println(disciplinasDoAluno.getDisciplina() + " ");
+				for(int i = 0; i < disciplinasDoAluno.getNota().length; i++) {
+					System.out.println("A nota número " + (i+1) + " é igual " + disciplinasDoAluno.getNota()[i]);
+				}
+				/*for (double notasDaDisciplina: disciplinasDoAluno.getNota()) {
+					System.out.println(notasDaDisciplina);
+				}*/
+			}
+			System.out.println();
+		}
+		
+		
+		
+/*
 		System.out.println("Nome do Aluno " + aluno.getNome() + " inscrito no curso: " + aluno.getNomeEscola());
 		System.out.println("---------- Disciplinas do aluno ----------");
 
@@ -50,7 +91,8 @@ public class ArrayVetor {
 			}
 			System.out.println("\nNota Minima = " + notaMin);
 			System.out.println("Nota Máxima = " + notaMax);
-		}
+	}
+	*/
 	}
 
 }

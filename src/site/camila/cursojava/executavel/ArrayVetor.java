@@ -37,6 +37,14 @@ public class ArrayVetor {
 			double notaMin = Double.POSITIVE_INFINITY;
 			for (double not : disc.getNota()) {
 				System.out.print(not + " ");
+				if (disc.getNota().length == 0) {
+					notaMax = 0.0;
+					notaMin = 0.0;
+				}
+				if (disc.getNota().length == 1) {
+					notaMax = not;
+					notaMin = not;
+				}
 				if (not > notaMax) notaMax = not;
 				if (not < notaMin) notaMin = not;
 			}

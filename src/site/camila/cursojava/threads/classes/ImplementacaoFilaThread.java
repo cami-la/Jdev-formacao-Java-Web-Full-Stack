@@ -6,7 +6,7 @@ public class ImplementacaoFilaThread extends Thread {
 	private static ConcurrentLinkedQueue<ObjetoFilaThread> pilhaFila = new ConcurrentLinkedQueue<ObjetoFilaThread>();
 	
 	public ImplementacaoFilaThread() {
-		new Thread(new TarefaProcessandoLista(pilhaFila)).start();
+		new Thread(new TarefaProcessandoFila(pilhaFila)).start();
 	}
 	
 	public static void add(ObjetoFilaThread objetoFilaThread) {

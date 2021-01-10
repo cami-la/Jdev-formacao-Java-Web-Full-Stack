@@ -3,11 +3,11 @@ package site.camila.cursojava.threads.classes;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class TarefaProcessandoLista implements Runnable {
+public class TarefaProcessandoFila implements Runnable {
 
 	private ConcurrentLinkedQueue<ObjetoFilaThread> pilhaFila;
 
-	public TarefaProcessandoLista(ConcurrentLinkedQueue<ObjetoFilaThread> pilhaFila) {
+	public TarefaProcessandoFila(ConcurrentLinkedQueue<ObjetoFilaThread> pilhaFila) {
 		this.pilhaFila = pilhaFila;
 	}
 
@@ -32,7 +32,7 @@ public class TarefaProcessandoLista implements Runnable {
 					iteracao.remove();
 
 					try {
-						Thread.sleep(100); // dar um tempo para descarga de memória
+						Thread.sleep(1000); // dar um tempo para descarga de memória
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

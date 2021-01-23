@@ -89,7 +89,7 @@ public class TelaNomeEEmail extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 				if (fila == null) {
 					fila = new ImplementacaoFilaThread();
-					fila.start();
+					//fila.start();
 				}
 				for (int i = 0; i < 10; i++) { // simulando 100
 					ObjetoFilaThread filaThread = new ObjetoFilaThread(); // objeto que será adicionado na lista assim
@@ -110,7 +110,7 @@ public class TelaNomeEEmail extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				fila.stop();
+				fila.parar();
 				fila = null;
 			}
 		});

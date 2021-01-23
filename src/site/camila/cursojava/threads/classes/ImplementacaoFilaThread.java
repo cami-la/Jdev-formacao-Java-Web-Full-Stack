@@ -5,14 +5,20 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class ImplementacaoFilaThread extends Thread {
 	private static ConcurrentLinkedQueue<ObjetoFilaThread> pilhaFila = new ConcurrentLinkedQueue<ObjetoFilaThread>();
 	
+	private Thread thread;
+	
 	public ImplementacaoFilaThread() {
-		new Thread(new TarefaProcessandoFila(pilhaFila)).start();
+		thread = new Thread(new TarefaProcessandoFila(pilhaFila));
+		thread.start();
 	}
 	
 	public static void add(ObjetoFilaThread objetoFilaThread) {
 		pilhaFila.add(objetoFilaThread);
 	}
 	
+	public void parar() {
+		if(thread.isAlive()) thread.stop();
+	}
 	/*
 	@Override
 	public void run() {
